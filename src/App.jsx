@@ -1,7 +1,7 @@
 import { useState } from "react";
-import CurrentWeather from "./CurrentWeather";
+import CurrentWeather from "./Current/CurrentWeather";
 import Searchbar from "./Searchbar/Searchbar";
-import Title from "./Title";
+import Title from "./Title/Title";
 
 function App() {
   const [city, setCity] = useState("");

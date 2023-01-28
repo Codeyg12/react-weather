@@ -3,6 +3,7 @@ import {
   faTemperatureArrowUp,
   faTemperatureArrowDown,
 } from "@fortawesome/free-solid-svg-icons";
+import './title.css'
 
 export default function Title() {
   return (
