@@ -47,6 +47,7 @@
   top: -15px;
   left: 35px;
   width: 180px;
+  margin: 0 -10px;
 }
 
 .details {
@@ -58,10 +59,16 @@
 }
 
 .label {
-  font-weight: bold;
+  font-weight: bolder;
 }
 
 .detail {
-  font-weight: bolder;
+  font-weight: bold;
   float: right;
+}
+
+.fahrenheit {
+    font-size: 2rem;
+    position: relative;
+    top: -20px;
 }

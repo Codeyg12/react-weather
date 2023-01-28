@@ -8,7 +8,7 @@ export default function CurrentWeather() {
       <div className="current">
         <div className="current-weather-card">
           <div className="left">
-            <div className="temp">{18}℉</div>
+            <div className="temp">{18}<span className='fahrenheit'>℉</span></div>
             <div className="city-info">
               <p className="name">Denver</p>
               <p className="description">Cloudy</p>
@@ -27,7 +27,7 @@ export default function CurrentWeather() {
               </div>
               <div className="wind">
                 <span className="label">Wind Speed</span>
-                <span className="detail">{45}MPH</span>
+                <span className="detail">{45} MPH</span>
               </div>
               <div className="humid">
                 <span className="label">Humidity</span>
