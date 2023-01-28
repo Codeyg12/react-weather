@@ -1,4 +1,5 @@
 import { useState } from "react";
+import CurrentWeather from "./CurrentWeather";
 import Searchbar from "./Searchbar";
 import Title from "./Title";
 
@@ -9,6 +10,7 @@ function App() {
     <>
       <Title />
       <Searchbar setCity={setCity} />
+      <CurrentWeather />
     </>
   );
 }
