@@ -36,3 +36,17 @@ header {
 .temp-gauge:last-child {
 color: red;
 }
+
+.current {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.current-weather-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 50%;
+}
