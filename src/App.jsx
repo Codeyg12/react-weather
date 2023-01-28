@@ -1,13 +1,13 @@
 import { useState } from "react";
 import Searchbar from "./Searchbar";
+import Title from "./Title";
 
 function App() {
-
-  const [city, setCity] = useState('')
+  const [city, setCity] = useState("");
 
   return (
     <>
-      <h1 className="title">Weather Dashboard</h1>
+      <Title />
       <Searchbar setCity={setCity} />
     </>
   );
