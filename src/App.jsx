@@ -1,6 +1,6 @@
 import { useState } from "react";
 import CurrentWeather from "./CurrentWeather";
-import Searchbar from "./Searchbar";
+import Searchbar from "./Searchbar/Searchbar";
 import Title from "./Title";
 
 function App() {
