@@ -1,7 +1,22 @@
 import './current.css'
+import axios from 'axios';
+import { useState } from 'react';
 
-export default function CurrentWeather() {
+export default function CurrentWeather({ city }) {
+  const [data, setData] = useState(null)
+  console.log("FUCK", data)
   let icon = "13d";
+  const WEATHER_API_KEY = `${process.env.REACT_APP_OPEN_WEATHER_KEY}` 
+ 
+  gatherData(city)
+
+  function gatherData() {
+    axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${WEATHER_API_KEY}&units=imperial`)
+    .then(res => {
+      setData(res)
+      console.log(res)
+    }).catch(err => console.error(err))
+  }
 
   return (
     <>

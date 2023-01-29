@@ -10,7 +10,7 @@ function App() {
     <>
       <Title />
       <Searchbar setCity={setCity} />
-      <CurrentWeather />
+      <CurrentWeather city={city} />
     </>
   );
 }
