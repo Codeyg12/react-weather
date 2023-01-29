@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/98f6aa6be9.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
+    <title>Weather Dashboard</title>
+</head>
+<body>
+    <header>
+        <i class="fa-solid fa-temperature-arrow-down temp-gauge"></i>
+        <h1 class="title">Weather Dashboard</h1>
+        <i class="fa-solid fa-temperature-arrow-up temp-gauge"></i>
+      </header>
+      <div class="search-bar-div">
+        <input type="text" class="search-bar">
+      </div>
+      <div class="current">
+        <div class="current-weather-card">
+          <div class="left">
+            <div class="temp">{18}<span class='fahrenheit'>℉</span></div>
+            <div class="city-info">
+              <p class="name">Denver</p>
+              <p class="description">Cloudy</p>
+            </div>
+          </div>
+          <div class="right">
+            <img
+              alt="weather-icon"
+              class="weather-icon"
+              id="weatherIcon"
+            />
+            <div class="details">
+              <div class="feels-like">
+                <span class="label">Feels Like</span>
+                <span class="detail">{2}℉</span>
+              </div>
+              <div class="wind">
+                <span class="label">Wind Speed</span>
+                <span class="detail">{45} MPH</span>
+              </div>
+              <div class="humid">
+                <span class="label">Humidity</span>
+                <span class="detail">{77}%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    
+    
+</body>
+</html>
