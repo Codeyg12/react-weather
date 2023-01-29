@@ -19,11 +19,15 @@ body {
   .temp-gauge {
     font-size: 65px;
     margin: auto 85px; 
-    color: blue;
+    background: -webkit-gradient(linear, left top, left bottom, from(hsl(215, 78%, 47%)), to(hsl(0, 79%, 55%)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
   
   .temp-gauge:last-child {
-  color: red;
+    background: -webkit-gradient(linear, left top, left bottom, from(hsl(0, 79%, 55%)), to(hsl(215, 78%, 47%)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
   
   
