@@ -1,3 +1,7 @@
+/* * {
+  outline: 1px solid red;
+} */
+
 body {
   width: 100%;
   overflow: hidden;
@@ -42,7 +46,12 @@ header {
 }
 
 .search-bar-div {
-  display: flex;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  /* grid-template-columns: 2fr 1fr; */
+  gap: 10px;
+  margin: auto 50px;
+  /* flex-wrap: wrap; */
 }
 
 .search-bar {
@@ -51,7 +60,13 @@ header {
   border-radius: 10px;
   font-size: 20px;
   text-align: center;
-  margin: auto 200px;
+  /* margin: auto 200px; */
+}
+
+.btn {
+  background-color: hsl(0, 0%, 100%);
+  width: 20%;
+  justify-self: center;
 }
 
 .current {
@@ -87,7 +102,7 @@ header {
 
 .name {
   font-size: 2em;
-  line-height: 1;
+  line-height: .8;
 }
 
 .description {

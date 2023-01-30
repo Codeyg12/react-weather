@@ -7,6 +7,7 @@
     <script src="https://kit.fontawesome.com/98f6aa6be9.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
     <script src="index.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Weather Dashboard</title>
 </head>
 <body>
@@ -16,7 +17,8 @@
         <i class="fa-solid fa-temperature-arrow-up temp-gauge"></i>
       </header>
       <div class="search-bar-div">
-        <input type="text" class="search-bar">
+        <input type="text" class="search-bar" id="city-select" placeholder="Enter city name..." />
+        <button class="search-bar btn" type="submit">Find weather</button>
       </div>
       <div class="current">
         <div class="current-weather-card">

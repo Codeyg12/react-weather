@@ -5,6 +5,7 @@ let cityDescription = document.getElementById('city-description')
 let feelsDetail = document.getElementById("feels-detail")
 let windDetail = document.getElementById("wind-detail")
 let humidityDetail = document.getElementById("humidity-detail")
+let citySelect = document.getElementById('city-select')
 
 let icon = '13d'
 let temper = 160.6
@@ -23,3 +24,12 @@ humidityDetail.innerText = '100 %'
 function currentCondtions(city) {
     let api 
 }
+
+// axios({
+//     method: 'get',
+//     url: 'http://bit.ly/2mTM3nY',
+//     responseType: 'stream'
+//   })
+//     .then(function (response) {
+//       response.data.pipe(fs.createWriteStream('ada_lovelace.jpg'))
+//     });
