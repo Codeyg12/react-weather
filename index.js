@@ -59,7 +59,7 @@ function fiveDayForecast(lat, lon) {
             let icon = listNum.weather[0].icon
             let high = Math.round(listNum.main.temp_max)
             let low = Math.round(listNum.main.temp_min)
-            addData('fiveDate', formatDate)
+            addData('fiveDate', `day${[i]}`, formatDate)
             // for (let j = 0; j < 5; j++) {
             //     addIcon(j, icon)
             // }
@@ -68,6 +68,7 @@ function fiveDayForecast(lat, lon) {
             // addData(fiveHigh, high)
             // addData(fiveLow, low)
             // addData()
+            // ! DOESNT WORK ON ACCOUNT OF DUMB NUMBERING
         } 
     })
 }
@@ -79,15 +80,15 @@ function fiveDayForecast(lat, lon) {
 //     }
 // }
 
-function addData(type, data) {
-    console.log(data)
-let fiveDayChild = fiveDay.children
-for (let i = 1; i <= fiveDayChild.length; i++) {
+function addData(type, id, data) {
+    console.log(id)
+    // console.log(data)
+// let fiveDayChild = fiveDay.children
+// for (let i = 1; i <= fiveDayChild.length; i++) {
     switch (type) {
         case 'fiveDate':
-            // [day1, day2, day3, day4, day5] = day
             console.log(data)
-            document.getElementById(`day${[i]}`).innerText = data
+                document.getElementById(`${id}`).innerText = data
             break;
         case fiveIcon:
             
@@ -102,7 +103,7 @@ for (let i = 1; i <= fiveDayChild.length; i++) {
         default:
     }
 }
-}
+// }
 
 cityBtn.addEventListener("click", (e) => {
   e.preventDefault();
