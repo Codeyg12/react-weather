@@ -54,56 +54,34 @@ function fiveDayForecast(lat, lon) {
         console.log(INFO)
         for (let i = 0; i < 40; i = i + 8) {
             let listNum = INFO.list[i]
+            console.log(listNum)
             let date = listNum.dt_txt.split(' ')[0]
             let formatDate = dayjs(date).format('MMM DD')
             let icon = listNum.weather[0].icon
             let high = Math.round(listNum.main.temp_max)
             let low = Math.round(listNum.main.temp_min)
             addData('fiveDate', `day${[i]}`, formatDate)
-            // for (let j = 0; j < 5; j++) {
-            //     addIcon(j, icon)
-            // }
-            // addData(fiveDate, formateDate)
-            // addData(fiveIcon, icon)
-            // addData(fiveHigh, high)
-            // addData(fiveLow, low)
-            // addData()
-            // ! DOESNT WORK ON ACCOUNT OF DUMB NUMBERING
+            addData('fiveIcon', `icon${[i]}`, icon)
+            addData('fiveHigh', `high${[i]}`, high)
+            addData('fiveLow', `low${[i]}`, low)
         } 
     })
 }
 
-// function addIcon(type, data) {
-//         let fiveDayChild = fiveDay.children
-//     for (let i = 0; i < fiveDayChild; i++) {
-//         [type].innerText = `http://openweathermap.org/img/wn/${data}@2x.png`
-//     }
-// }
 
 function addData(type, id, data) {
-    console.log(id)
-    // console.log(data)
-// let fiveDayChild = fiveDay.children
-// for (let i = 1; i <= fiveDayChild.length; i++) {
     switch (type) {
         case 'fiveDate':
-            console.log(data)
                 document.getElementById(`${id}`).innerText = data
             break;
-        case fiveIcon:
-            
+        case 'fiveIcon':
+            document.getElementById(`${id}`).src = `http://openweathermap.org/img/wn/${data}@2x.png`
             break;
-        case fiveHigh:
-            
-            break;
-        case fiveLow:
-            
-            break;
-    
         default:
+            document.getElementById(`${id}`).innerText = Math.round(data)
     }
 }
-// }
+
 
 cityBtn.addEventListener("click", (e) => {
   e.preventDefault();
