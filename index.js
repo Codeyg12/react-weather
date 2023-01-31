@@ -7,14 +7,15 @@ let windDetail = document.getElementById("wind-detail");
 let humidityDetail = document.getElementById("humidity-detail");
 let citySelect = document.getElementById("city-select");
 let cityBtn = document.getElementById("city-btn");
+let fiveDay = document.getElementById('five-day')
 
 
 
-fiveIcon1.src = 'http://openweathermap.org/img/wn/13d@2x.png'
-fiveIcon2.src = 'http://openweathermap.org/img/wn/09d@2x.png'
-fiveIcon3.src = 'http://openweathermap.org/img/wn/11d@2x.png'
-fiveIcon4.src = 'http://openweathermap.org/img/wn/04d@2x.png'
-fiveIcon5.src = 'http://openweathermap.org/img/wn/13d@2x.png'
+// fiveIcon1.src = 'http://openweathermap.org/img/wn/13d@2x.png'
+// fiveIcon2.src = 'http://openweathermap.org/img/wn/09d@2x.png'
+// fiveIcon3.src = 'http://openweathermap.org/img/wn/11d@2x.png'
+// fiveIcon4.src = 'http://openweathermap.org/img/wn/04d@2x.png'
+// fiveIcon5.src = 'http://openweathermap.org/img/wn/13d@2x.png'
 
 
 
@@ -44,9 +45,7 @@ function currentCondtions(city) {
 }
 
 function fiveDayForecast(lat, lon) {
-    // `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&exclude=alerts,hourly,minutely&appid=0830fec5fefb765b207129fdb7fcdf86&units=imperial`
     let apiCall = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=0830fec5fefb765b207129fdb7fcdf86&units=imperial`
-    // `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=alerts,hourly,minutely&appid=0830fec5fefb765b207129fdb7fcdf86&units=imperial`
     axios({
         method: 'get',
         url: apiCall,
@@ -54,11 +53,38 @@ function fiveDayForecast(lat, lon) {
         const INFO = res.data;
         console.log(INFO)
         for (let i = 0; i < 40; i = i + 8) {
-            let date = INFO.list[i].dt_txt.split(' ')[0]
-            console.log(dayjs(date).format('MMM DD'))
+            let listNum = INFO.list[i]
+            let date = listNum.dt_txt.split(' ')[0]
+            let formatDate = dayjs(date).format('MMM DD')
+            let icon = listNum.weather[0].icon
+            let high = Math.round(listNum.main.temp_max)
+            let low = Math.round(listNum.main.temp_min)
+            for (let j = 0; j < 5; j++) {
+                addIcon(j, icon)
+            }
+            // addData(fiveDate, formateDate)
+            // addData(fiveIcon, icon)
+            // addData(fiveHigh, high)
+            // addData(fiveLow, low)
+            addData()
         } 
     })
 }
+
+function addIcon(type, data) {
+        let fiveDayChild = fiveDay.children
+    for (let i = 0; i < fiveDayChild; i++) {
+        fiveIcon[type].innerText = `http://openweathermap.org/img/wn/${data}@2x.png`
+    }
+}
+
+// function addData(type, data) {
+//     let fiveDayChild = fiveDay.children
+//     for (let i = 0; i < fiveDayChild; i++) {
+//         type[i].innerText = 
+//     }
+//     console.log(fiveDayChild.length)
+// }
 
 cityBtn.addEventListener("click", (e) => {
   e.preventDefault();
