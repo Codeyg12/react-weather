@@ -8,17 +8,7 @@ let humidityDetail = document.getElementById("humidity-detail");
 let citySelect = document.getElementById("city-select");
 let cityBtn = document.getElementById("city-btn");
 let fiveDay = document.getElementById('five-day')
-
-
-
-// fiveIcon1.src = 'http://openweathermap.org/img/wn/13d@2x.png'
-// fiveIcon2.src = 'http://openweathermap.org/img/wn/09d@2x.png'
-// fiveIcon3.src = 'http://openweathermap.org/img/wn/11d@2x.png'
-// fiveIcon4.src = 'http://openweathermap.org/img/wn/04d@2x.png'
-// fiveIcon5.src = 'http://openweathermap.org/img/wn/13d@2x.png'
-
-
-
+let fiveDayDiv = document.getElementById('five-day-div')
 
 function currentCondtions(city) {
   let apiCall = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=0830fec5fefb765b207129fdb7fcdf86&units=imperial`;
@@ -26,7 +16,7 @@ function currentCondtions(city) {
     method: "get",
     url: apiCall,
   }).then((res) => {
-    current.classList.remove('hidden')
+      current.classList.remove('hidden')
     const INFO = res.data;
     let lat = INFO.coord.lat
     let lon = INFO.coord.lon
@@ -50,8 +40,8 @@ function fiveDayForecast(lat, lon) {
         method: 'get',
         url: apiCall,
     }).then((res) => {
+        fiveDayDiv.classList.remove('hidden')
         const INFO = res.data;
-        console.log(INFO)
         for (let i = 0; i < 40; i = i + 8) {
             let listNum = INFO.list[i]
             console.log(listNum)
