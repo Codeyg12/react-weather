@@ -1,145 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/98f6aa6be9.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/98f6aa6be9.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
     <script src="index.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
     <title>Weather Dashboard</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <i class="fa-solid fa-temperature-arrow-down temp-gauge"></i>
-        <h1 class="title">Weather Dashboard</h1>
-        <i class="fa-solid fa-temperature-arrow-up temp-gauge"></i>
-      </header>
-      <div class="search-bar-div">
-        <input type="text" class="search-bar" id="city-select" placeholder="Enter city name..." />
-        <button class="search-bar btn" type="submit" id="city-btn">Find weather</button>
-      </div>
-      <div class="current hidden" id="current">
-        <div class="current-weather-card">
-          <div class="left">
-            <div class="temp" id="current-temp"></div>
-            <div class="city-info">
-              <p class="name" id="city-name"></p>
-              <p class="description" id="city-description"></p>
-            </div>
-          </div>
-          <div class="right">
-            <img
-              alt="weather-icon"
-              class="weather-icon"
-              id="weather-icon"
-            />
-            <div class="details">
-              <div class="feels-like">
-                <span class="label">Feels Like</span>
-                <span class="detail" id="feels-detail"></span>
-              </div>
-              <div class="wind">
-                <span class="label">Wind Speed</span>
-                <span class="detail" id="wind-detail"></span>
-              </div>
-              <div class="humid">
-                <span class="label">Humidity</span>
-                <span class="detail" id="humidity-detail"></span>
-              </div>
-            </div>
+      <i class="fa-solid fa-temperature-arrow-down temp-gauge"></i>
+      <h1 class="title">Weather Dashboard</h1>
+      <i class="fa-solid fa-temperature-arrow-up temp-gauge"></i>
+    </header>
+    <div class="search-bar-div">
+      <input
+        type="text"
+        class="search-bar"
+        id="city-select"
+        placeholder="Enter city name..."
+      />
+      <button class="search-bar btn" type="submit" id="city-btn">
+        Find weather
+      </button>
+    </div>
+    <div class="current hidden" id="current">
+      <div class="current-weather-card">
+        <div class="left">
+          <div class="temp" id="current-temp"></div>
+          <div class="city-info">
+            <p class="name" id="city-name"></p>
+            <p class="description" id="city-description"></p>
           </div>
         </div>
-      </div>
-<div class="hidden" id="five-day-div">
-  <div class="five-day" id="five-day">
-    <div class="five-day-card">
-      <h3 class="day-of-week" id="day0">Monday</h3>
-      <div class="five-day-icon">
-        <img class="five-icon" id="icon0" alt="five day weather icon">
-      </div>
-      <div class="high-low">
-        <div class="high-low-div">
-          <span class="five-label">High</span>
-          <span class="five-detail" id="high0"></span>
-        </div>
-        <div class="high-low-div">
-          <span class="five-label">Low</span>
-          <span class="five-detail" id="low0"></span>
-        </div>
-      </div>
-    </div>
-    <div class="five-day-card">
-      <h3 class="day-of-week" id="day8">Monday</h3>
-      <div class="five-day-icon">
-        <img class="five-icon" id="icon8" alt="five day weather icon">
-      </div>
-      <div class="high-low">
-        <div class="high-low-div">
-          <span class="five-label">High</span>
-          <span class="five-detail" id="high8"></span>
-        </div>
-        <div class="high-low-div">
-          <span class="five-label">Low</span>
-          <span class="five-detail" id="low8"></span>
+        <div class="right">
+          <img alt="weather-icon" class="weather-icon" id="weather-icon" />
+          <div class="details">
+            <div class="feels-like">
+              <span class="label">Feels Like</span>
+              <span class="detail" id="feels-detail"></span>
+            </div>
+            <div class="wind">
+              <span class="label">Wind Speed</span>
+              <span class="detail" id="wind-detail"></span>
+            </div>
+            <div class="humid">
+              <span class="label">Humidity</span>
+              <span class="detail" id="humidity-detail"></span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="five-day-card">
-      <h3 class="day-of-week" id="day16">Monday</h3>
-      <div class="five-day-icon">
-        <img class="five-icon" id="icon16" alt="five day weather icon">
-      </div>
-      <div class="high-low">
-        <div class="high-low-div">
-          <span class="five-label">High</span>
-          <span class="five-detail" id="high16"></span>
+    <div class="hidden" id="five-day-div">
+      <div class="five-day" id="five-day">
+        <div class="five-day-card">
+          <h3 class="day-of-week" id="day0">Monday</h3>
+          <div class="five-day-icon">
+            <img class="five-icon" id="icon0" alt="five day weather icon" />
+          </div>
+          <div class="high-low">
+            <div class="high-low-div">
+              <span class="five-label">High</span>
+              <span class="five-detail" id="high0"></span>
+            </div>
+            <div class="high-low-div">
+              <span class="five-label">Low</span>
+              <span class="five-detail" id="low0"></span>
+            </div>
+          </div>
         </div>
-        <div class="high-low-div">
-          <span class="five-label">Low</span>
-          <span class="five-detail" id="low16"></span>
+        <div class="five-day-card">
+          <h3 class="day-of-week" id="day8">Monday</h3>
+          <div class="five-day-icon">
+            <img class="five-icon" id="icon8" alt="five day weather icon" />
+          </div>
+          <div class="high-low">
+            <div class="high-low-div">
+              <span class="five-label">High</span>
+              <span class="five-detail" id="high8"></span>
+            </div>
+            <div class="high-low-div">
+              <span class="five-label">Low</span>
+              <span class="five-detail" id="low8"></span>
+            </div>
+          </div>
+        </div>
+        <div class="five-day-card">
+          <h3 class="day-of-week" id="day16">Monday</h3>
+          <div class="five-day-icon">
+            <img class="five-icon" id="icon16" alt="five day weather icon" />
+          </div>
+          <div class="high-low">
+            <div class="high-low-div">
+              <span class="five-label">High</span>
+              <span class="five-detail" id="high16"></span>
+            </div>
+            <div class="high-low-div">
+              <span class="five-label">Low</span>
+              <span class="five-detail" id="low16"></span>
+            </div>
+          </div>
+        </div>
+        <div class="five-day-card">
+          <h3 class="day-of-week" id="day24">Monday</h3>
+          <div class="five-day-icon">
+            <img class="five-icon" id="icon24" alt="five day weather icon" />
+          </div>
+          <div class="high-low">
+            <div class="high-low-div">
+              <span class="five-label">High</span>
+              <span class="five-detail" id="high24"></span>
+            </div>
+            <div class="high-low-div">
+              <span class="five-label">Low</span>
+              <span class="five-detail" id="low24"></span>
+            </div>
+          </div>
+        </div>
+        <div class="five-day-card">
+          <h3 class="day-of-week" id="day32">Monday</h3>
+          <div class="five-day-icon">
+            <img class="five-icon" id="icon32" alt="five day weather icon" />
+          </div>
+          <div class="high-low">
+            <div class="high-low-div">
+              <span class="five-label">High</span>
+              <span class="five-detail" id="high32"></span>
+            </div>
+            <div class="high-low-div">
+              <span class="five-label">Low</span>
+              <span class="five-detail" id="low32"></span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="five-day-card">
-      <h3 class="day-of-week" id="day24">Monday</h3>
-      <div class="five-day-icon">
-        <img class="five-icon" id="icon24" alt="five day weather icon">
-      </div>
-      <div class="high-low">
-        <div class="high-low-div">
-          <span class="five-label">High</span>
-          <span class="five-detail" id="high24"></span>
-        </div>
-        <div class="high-low-div">
-          <span class="five-label">Low</span>
-          <span class="five-detail" id="low24"></span>
-        </div>
-      </div>
-    </div>
-    <div class="five-day-card">
-      <h3 class="day-of-week" id="day32">Monday</h3>
-      <div class="five-day-icon">
-        <img class="five-icon" id="icon32" alt="five day weather icon">
-      </div>
-      <div class="high-low">
-        <div class="high-low-div">
-          <span class="five-label">High</span>
-          <span class="five-detail" id="high32"></span>
-        </div>
-        <div class="high-low-div">
-          <span class="five-label">Low</span>
-          <span class="five-detail" id="low32"></span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-</div>
-    
-    
-    
-</body>
+  </body>
 </html>
