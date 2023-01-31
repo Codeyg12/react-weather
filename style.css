@@ -75,6 +75,10 @@ header {
   margin-top: 50px;
 }
 
+.hidden {
+  display: none;
+}
+
 .current-weather-card {
   display: grid;
   grid-template-columns: 1fr 1fr;
