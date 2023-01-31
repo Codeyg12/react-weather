@@ -59,32 +59,50 @@ function fiveDayForecast(lat, lon) {
             let icon = listNum.weather[0].icon
             let high = Math.round(listNum.main.temp_max)
             let low = Math.round(listNum.main.temp_min)
-            for (let j = 0; j < 5; j++) {
-                addIcon(j, icon)
-            }
+            addData('fiveDate', formatDate)
+            // for (let j = 0; j < 5; j++) {
+            //     addIcon(j, icon)
+            // }
             // addData(fiveDate, formateDate)
             // addData(fiveIcon, icon)
             // addData(fiveHigh, high)
             // addData(fiveLow, low)
-            addData()
+            // addData()
         } 
     })
 }
 
-function addIcon(type, data) {
-        let fiveDayChild = fiveDay.children
-    for (let i = 0; i < fiveDayChild; i++) {
-        fiveIcon[type].innerText = `http://openweathermap.org/img/wn/${data}@2x.png`
+// function addIcon(type, data) {
+//         let fiveDayChild = fiveDay.children
+//     for (let i = 0; i < fiveDayChild; i++) {
+//         [type].innerText = `http://openweathermap.org/img/wn/${data}@2x.png`
+//     }
+// }
+
+function addData(type, data) {
+    console.log(data)
+let fiveDayChild = fiveDay.children
+for (let i = 1; i <= fiveDayChild.length; i++) {
+    switch (type) {
+        case 'fiveDate':
+            // [day1, day2, day3, day4, day5] = day
+            console.log(data)
+            document.getElementById(`day${[i]}`).innerText = data
+            break;
+        case fiveIcon:
+            
+            break;
+        case fiveHigh:
+            
+            break;
+        case fiveLow:
+            
+            break;
+    
+        default:
     }
 }
-
-// function addData(type, data) {
-//     let fiveDayChild = fiveDay.children
-//     for (let i = 0; i < fiveDayChild; i++) {
-//         type[i].innerText = 
-//     }
-//     console.log(fiveDayChild.length)
-// }
+}
 
 cityBtn.addEventListener("click", (e) => {
   e.preventDefault();
