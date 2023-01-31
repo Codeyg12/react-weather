@@ -168,20 +168,24 @@ header {
 }
 
 .day-of-week {
-  font-size: 1.2em;
+  font-size: 1.5em;
+  position: relative;
+  top: -10px;
   grid-column: span 2;
   text-align: center;
 }
 
 .five-icon {
   position: relative;
-  top: -10px;
+  top: -15px;
   left: 25px;
 }
 
 .high-low {
   display: flex;
   flex-wrap: wrap;
+  position: relative;
+  top: -10px;
 }
 
 .high-low-div {

@@ -27,12 +27,15 @@ function currentCondtions(city) {
   }).then((res) => {
     current.classList.remove('hidden')
     const INFO = res.data;
+    let lat = INFO.coord.lat
+    let lon = INFO.coord.lon
+    fiveDayForecast(lat, lon)
     console.log(INFO);
     cityName.innerText = INFO.name;
     cityDescription.innerText = INFO.weather[0].description;
     currentTemp.innerHTML = `${Math.round(
-      INFO.main.temp
-    )}<span class='fahrenheit'>℉</span>`;
+        INFO.main.temp
+        )}<span class='fahrenheit'>℉</span>`;
     weatherIcon.src = `http://openweathermap.org/img/wn/${INFO.weather[0].icon}@2x.png`;
     feelsDetail.innerText = Math.round(INFO.main.feels_like);
     windDetail.innerText = Math.round(INFO.wind.speed);
@@ -40,8 +43,24 @@ function currentCondtions(city) {
   });
 }
 
+function fiveDayForecast(lat, lon) {
+    // `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&exclude=alerts,hourly,minutely&appid=0830fec5fefb765b207129fdb7fcdf86&units=imperial`
+    let apiCall = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=0830fec5fefb765b207129fdb7fcdf86&units=imperial`
+    // `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=alerts,hourly,minutely&appid=0830fec5fefb765b207129fdb7fcdf86&units=imperial`
+    axios({
+        method: 'get',
+        url: apiCall,
+    }).then((res) => {
+        const INFO = res.data;
+        console.log(INFO)
+        for (let i = 0; i < 40; i = i + 8) {
+            console.log(INFO.list[i].dt_txt)
+        } 
+    })
+}
+
 cityBtn.addEventListener("click", (e) => {
   e.preventDefault();
   currentCondtions(citySelect.value);
-  fiveDayForecast(citySelect.value)
+//   fiveDayForecast(citySelect.value)
 });
