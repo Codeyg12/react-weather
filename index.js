@@ -11,9 +11,9 @@ let cityBtn = document.getElementById("city-btn");
 
 
 fiveIcon1.src = 'http://openweathermap.org/img/wn/13d@2x.png'
-fiveIcon2.src = 'http://openweathermap.org/img/wn/10d@2x.png'
+fiveIcon2.src = 'http://openweathermap.org/img/wn/09d@2x.png'
 fiveIcon3.src = 'http://openweathermap.org/img/wn/11d@2x.png'
-fiveIcon4.src = 'http://openweathermap.org/img/wn/10d@2x.png'
+fiveIcon4.src = 'http://openweathermap.org/img/wn/04d@2x.png'
 fiveIcon5.src = 'http://openweathermap.org/img/wn/13d@2x.png'
 
 
