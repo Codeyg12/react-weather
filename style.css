@@ -1,6 +1,6 @@
-/* * {
-  outline: 1px solid red;
-} */
+* {
+  box-sizing: border-box;
+}
 
 body {
   width: 100%;
@@ -29,6 +29,7 @@ header {
     from(hsl(215, 78%, 47%)),
     to(hsl(0, 79%, 55%))
   );
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -41,6 +42,7 @@ header {
     from(hsl(0, 79%, 55%)),
     to(hsl(215, 78%, 47%))
   );
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -48,10 +50,8 @@ header {
 .search-bar-div {
   display: grid;
   grid-template-rows: 1fr 1fr;
-  /* grid-template-columns: 2fr 1fr; */
   gap: 10px;
   margin: auto 50px;
-  /* flex-wrap: wrap; */
 }
 
 .search-bar {
@@ -60,7 +60,6 @@ header {
   border-radius: 10px;
   font-size: 20px;
   text-align: center;
-  /* margin: auto 200px; */
 }
 
 .btn {
@@ -149,4 +148,25 @@ header {
   font-size: 2rem;
   position: relative;
   top: -20px;
+}
+
+.five-day {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  margin-right: 12.5px;
+  gap: 1em;
+  height: 200px;
+  align-content: center;
+}
+
+.five-day-card {
+  border: 1px solid black;
+  height: 175px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.day-of-week {
+  font-size: 1.2em;
 }
