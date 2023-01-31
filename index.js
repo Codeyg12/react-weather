@@ -54,7 +54,8 @@ function fiveDayForecast(lat, lon) {
         const INFO = res.data;
         console.log(INFO)
         for (let i = 0; i < 40; i = i + 8) {
-            console.log(INFO.list[i].dt_txt)
+            let date = INFO.list[i].dt_txt.split(' ')[0]
+            console.log(dayjs(date).format('MMM DD'))
         } 
     })
 }
