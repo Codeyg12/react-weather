@@ -1,27 +1,26 @@
-let currentTemp = document.getElementById("current-temp");
-let weatherIcon = document.getElementById("weather-icon");
-let cityName = document.getElementById("city-name");
-let cityDescription = document.getElementById("city-description");
-let feelsDetail = document.getElementById("feels-detail");
-let windDetail = document.getElementById("wind-detail");
-let humidityDetail = document.getElementById("humidity-detail");
-let citySelect = document.getElementById("city-select");
-let cityBtn = document.getElementById("city-btn");
-let fiveDay = document.getElementById("five-day");
-let fiveDayDiv = document.getElementById("five-day-div");
+const currentTemp = document.getElementById("current-temp");
+const weatherIcon = document.getElementById("weather-icon");
+const cityName = document.getElementById("city-name");
+const cityDescription = document.getElementById("city-description");
+const feelsDetail = document.getElementById("feels-detail");
+const windDetail = document.getElementById("wind-detail");
+const humidityDetail = document.getElementById("humidity-detail");
+const citySelect = document.getElementById("city-select");
+const cityBtn = document.getElementById("city-btn");
+const fiveDay = document.getElementById("five-day");
+const fiveDayDiv = document.getElementById("five-day-div");
 
 function currentCondtions(city) {
-  let apiCall = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=0830fec5fefb765b207129fdb7fcdf86&units=imperial`;
+  const apiCall = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=0830fec5fefb765b207129fdb7fcdf86&units=imperial`;
   axios({
     method: "get",
     url: apiCall,
   }).then((res) => {
     current.classList.remove("hidden");
     const INFO = res.data;
-    let lat = INFO.coord.lat;
-    let lon = INFO.coord.lon;
+    const lat = INFO.coord.lat;
+    const lon = INFO.coord.lon;
     fiveDayForecast(lat, lon);
-    console.log(INFO);
     cityName.innerText = INFO.name;
     cityDescription.innerText = INFO.weather[0].description;
     currentTemp.innerHTML = `${Math.round(
@@ -35,21 +34,20 @@ function currentCondtions(city) {
 }
 
 function fiveDayForecast(lat, lon) {
-  let apiCall = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=0830fec5fefb765b207129fdb7fcdf86&units=imperial`;
+  const apiCall = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=0830fec5fefb765b207129fdb7fcdf86&units=imperial`;
   axios({
     method: "get",
     url: apiCall,
   }).then((res) => {
     fiveDayDiv.classList.remove("hidden");
     const INFO = res.data;
-    for (let i = 0; i < 40; i = i + 8) {
-      let listNum = INFO.list[i];
-      console.log(listNum);
-      let date = listNum.dt_txt.split(" ")[0];
-      let formatDate = dayjs(date).format("MMM DD");
-      let icon = listNum.weather[0].icon;
-      let high = Math.round(listNum.main.temp_max);
-      let low = Math.round(listNum.main.temp_min);
+    for (let i = 0; i < 40; i += 8) {
+      const listNum = INFO.list[i];
+      const date = listNum.dt_txt.split(" ")[0];
+      const formatDate = dayjs(date).format("MMM DD");
+      const icon = listNum.weather[0].icon;
+      const high = Math.round(listNum.main.temp_max);
+      const low = Math.round(listNum.main.temp_min);
       addData("fiveDate", `day${[i]}`, formatDate);
       addData("fiveIcon", `icon${[i]}`, icon);
       addData("fiveHigh", `high${[i]}`, high);
