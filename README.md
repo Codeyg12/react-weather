@@ -4,7 +4,7 @@
 
   ### Description
   
-  A weather app using the OpenWeatherAPI. Shows a current card for the day as well as a 5 day forecast.
+  A weather app using the OpenWeatherMap API. Shows a current card for the day as well as a 5 day forecast. I had previously completed a similar project for a boot camp and wanted to redo it in a different way. Although it was still made with vanilla JS.
 
   <p align="right"><a href="#readme-top">(Return to top)</a></p>
 
@@ -26,25 +26,44 @@
   ### Demo
 
   Click here
+  ![demo pic](https://user-images.githubusercontent.com/103782398/216794989-efd48d35-7624-4b6b-94ca-a606d6904c29.png)
+
 
   <p align="right"><a href="#readme-top">(Return to top)</a></p>
   
   ### Installation
 
-  1. Clone the repo using either HTTPS `` or SSH key ``
+  1. Clone the repo using either HTTPS
+
+  ```
+  https://github.com/Codeyg12/weather.git
+  ```
+
+   or SSH key
+
+   ```
+   git@github.com:Codeyg12/weather.git
+   ```
+   
  2. install NPM packages `npm i`
 
   <p align="right"><a href="#readme-top">(Return to top)</a></p>
 
   ### Usage
 
-  Checking the weather
+  Checking the current weather and a 5 day forecast.
 
   <p align="right"><a href="#readme-top">(Return to top)</a></p>
 
   ### Technologies
 
   Below are the languages and frameworks/libraries used
+
+  - ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+
+  - ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+
+  - ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 
   <p align="right"><a href="#readme-top">(Return to top)</a></p>
 
