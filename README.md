@@ -25,7 +25,8 @@
 
   ### Demo
 
-  Click here
+  Click [here](https://codeyg12.github.io/weather/) to use
+
   ![demo pic](https://user-images.githubusercontent.com/103782398/216794989-efd48d35-7624-4b6b-94ca-a606d6904c29.png)
 
 
