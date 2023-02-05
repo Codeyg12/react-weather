@@ -203,3 +203,75 @@ header {
   text-align: center;
   font-size: 1.5em;
 }
+
+@media all and (max-width: 500px) {
+  .title {
+    font-size: 2em;
+    margin: 0;
+  }
+  .temp-gauge {
+    margin: 0;
+  }
+  .btn {
+    width: 50%;
+  }
+  .current-weather-card {
+    width: 300px;
+  }
+  
+  .temp {
+    width: 100%;
+    font-size: 3.5em;
+    padding: 20px 0 0 20px;
+  }
+  
+  .city-info {
+    padding-left: 20px;
+  }
+  
+  .weather-icon {
+    left: 10px;
+    width: 150px;
+  }
+  
+  .details {
+   margin-bottom: 0;
+    line-height: 1;
+  }
+
+  .five-day {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    height: 100px;
+    margin-top: 170px;
+  }
+  
+  .five-day-card {
+    width: 100px;
+    grid-column: span 2;
+  }
+
+  .five-day-card:nth-child(4) {
+    grid-column-end: 4;
+  }
+  
+  .day-of-week {
+    font-size: 1.3em;
+    text-align: center;
+  }
+  
+  .five-icon {
+    position: relative;
+    left: -10px;
+    width: 70px;
+  }
+  
+  .high-low {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    top: -10px;
+    left: -10px;
+  }
+
+}
