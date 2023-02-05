@@ -4,7 +4,7 @@
 
   ### Description
   
-  A weather app using the OpenWeatherMap API. Shows a current card for the day as well as a 5 day forecast. I had previously completed a similar project for a boot camp and wanted to redo it in a different way. Although it was still made with vanilla JS.
+   A weather app using the OpenWeatherMap API. Shows a current card for the day as well as a 5-day forecast. I had previously completed a similar project for a boot camp and wanted to redo it differently. Although it was still made with vanilla JS.
 
   <p align="right"><a href="#readme-top">(Return to top)</a></p>
 
@@ -51,7 +51,7 @@
 
   ### Usage
 
-  Checking the current weather and a 5 day forecast.
+  Checking the current weather and a 5-day forecast.
 
   <p align="right"><a href="#readme-top">(Return to top)</a></p>
 
@@ -75,7 +75,7 @@
 
   ### Testing
 
-  npm test
+  none
 
   <p align="right"><a href="#readme-top">(Return to top)</a></p>
 
