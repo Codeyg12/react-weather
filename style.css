@@ -222,7 +222,7 @@ header {
   .temp {
     width: 100%;
     font-size: 3.5em;
-    padding: 20px 0 0 20px;
+    padding: 35px 0 0 35px;
   }
   
   .city-info {
@@ -242,8 +242,8 @@ header {
   .five-day {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    height: 80px;
-    margin-top: 160px;
+    height: 100px;
+    margin-top: 150px;
   }
   
   .five-day-card {
@@ -252,6 +252,7 @@ header {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    height: 160px;
   }
 
   .five-day-card:nth-child(4) {
