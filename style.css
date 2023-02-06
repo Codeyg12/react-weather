@@ -249,6 +249,9 @@ header {
   .five-day-card {
     width: 100px;
     grid-column: span 2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .five-day-card:nth-child(4) {
@@ -257,21 +260,25 @@ header {
   
   .day-of-week {
     font-size: 1.3em;
-    text-align: center;
   }
   
   .five-icon {
     position: relative;
-    left: -10px;
-    width: 70px;
+    left: 0;
+    top: -25px;
+    width: 60px;
   }
   
   .high-low {
-    display: flex;
-    flex-wrap: wrap;
-    position: relative;
-    top: -10px;
-    left: -10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 15px;
+  }
+
+  .high-low-div:nth-child(even) {
+    grid-column: 1;
+    grid-row: 1;
   }
 
 }
