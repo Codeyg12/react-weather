@@ -87,6 +87,7 @@ header {
   border: 1px solid black;
   border-radius: 10px;
   width: 500px;
+  box-shadow: 0 0 20px hsl(0, 0%, 45%);
 }
 
 .left {
@@ -164,6 +165,8 @@ header {
   height: 175px;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  border-radius: 10px;
+  box-shadow: 0 0 10px hsl(0, 0%, 45%);
 }
 
 .day-of-week {
