@@ -242,8 +242,8 @@ header {
   .five-day {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    height: 100px;
-    margin-top: 170px;
+    height: 80px;
+    margin-top: 160px;
   }
   
   .five-day-card {
@@ -265,7 +265,7 @@ header {
   .five-icon {
     position: relative;
     left: 0;
-    top: -25px;
+    top: -30px;
     width: 60px;
   }
   
@@ -273,7 +273,9 @@ header {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
-    gap: 15px;
+    column-gap: 15px;
+    position: relative;
+    top: -25px;
   }
 
   .high-low-div:nth-child(even) {
