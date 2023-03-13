@@ -9,9 +9,10 @@ const citySelect = document.getElementById("city-select");
 const cityBtn = document.getElementById("city-btn");
 const fiveDay = document.getElementById("five-day");
 const fiveDayDiv = document.getElementById("five-day-div");
+const API_KEY = `0830fec5fefb765b207129fdb7fcdf86`
 
 function currentCondtions(city) {
-  const apiCall = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=0830fec5fefb765b207129fdb7fcdf86&units=imperial`;
+  const apiCall = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=imperial`;
   axios({
     method: "get",
     url: apiCall,
@@ -34,7 +35,7 @@ function currentCondtions(city) {
 }
 
 function fiveDayForecast(lat, lon) {
-  const apiCall = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=0830fec5fefb765b207129fdb7fcdf86&units=imperial`;
+  const apiCall = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=imperial`;
   axios({
     method: "get",
     url: apiCall,
